@@ -9,9 +9,12 @@ PARALLEL_JOBS=$(cat /proc/cpuinfo | grep cores | wc -l)
 export PATH=$PREFIX/bin:$PATH
 
 wget -c https://ftp.gnu.org/gnu/binutils/binutils-2.34.tar.xz
+wget -c https://ftp.gnu.org/gnu/gmp/gmp-6.2.0.tar.xz
 wget -c https://gcc.gnu.org/pub/gcc/infrastructure/isl-0.18.tar.bz2
 tar xvJf binutils-2.34.tar.xz
+tar xvJf gmp-6.2.0.tar.xz
 tar xvjf isl-0.18.tar.bz2
+mv -v gmp-6.2.0 binutils-2.34/gmp
 mv -v isl-0.18 binutils-2.34/isl
 ( cd binutils-2.34 && \
 ./configure \
@@ -46,7 +49,6 @@ rm -rf binutils-2.34
 
 wget -c https://ftp.gnu.org/gnu/gcc/gcc-9.3.0/gcc-9.3.0.tar.xz
 wget -c https://ftp.gnu.org/gnu/mpfr/mpfr-4.0.2.tar.xz
-wget -c https://ftp.gnu.org/gnu/gmp/gmp-6.2.0.tar.xz
 wget -c https://ftp.gnu.org/gnu/mpc/mpc-1.1.0.tar.gz
 wget -c https://gcc.gnu.org/pub/gcc/infrastructure/cloog-0.18.1.tar.gz
 tar xvJf gcc-9.3.0.tar.xz

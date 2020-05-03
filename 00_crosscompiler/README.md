@@ -6,10 +6,10 @@ AArch64 Cross Compiler
 준비 사항
 ------------
 
-우리는 'Ubuntu 20.04 LTS'에서 작업할 것입니다. GCC, G++, Make가 필요합니다.
+우리는 'Ubuntu 20.04 LTS'에서 작업할 것입니다. GCC, G++, Make, Zlib, Texinfo가 필요합니다.
 
 ```sh
-sudo apt install gcc g++ make
+sudo apt install gcc g++ make zlib1g-dev texinfo
 ```
 
 다운로드와 소스 압축 풀기
